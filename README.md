@@ -24,6 +24,11 @@ Ensure all git submodules are initialized:
 
     git submodule update --init --recursive
 
+Install iPlug dependencies:
+
+    cd ./iplugsdk/Dependencies/IPlug &&  ./download-iplug-sdks.sh && cd ../../..
+    cd ./iplugsdk/Dependencies &&  ./download-prebuilt-libs.sh && cd ../..
+
 
 ## Usage
 
@@ -39,7 +44,9 @@ Ensure you also update the preview image and audio files:
 
 ## Testing your plugin
 
-Todo
+Open the project:
+
+    open ./iplugsdk/Examples/IPlugInstrument/IPlugInstrument.xcworkspace
 
 
 ## Build (manual)
@@ -52,34 +59,19 @@ Depending on the the operating system you are on/building for, swap the generato
 
 Compile a development version of the plugin using:
 
-    cmake \
-      -G "Xcode" \
-      -DCMAKE_BUILD_TYPE=Debug \
-      -DJUCE_BUILD_EXAMPLES=ON \
-      -DJUCE_BUILD_EXTRAS=OFF \
-      -S ./jucesdk \
-      -B ./build
-    cmake --build ./build --config Debug --target AudioPluginExample_All
+    xcodebuild -project ./iplugsdk/Examples/IPlugInstrument/projects/IPlugInstrument-macOS.xcodeproj -xcconfig ./iplugsdk/Examples/IPlugInstrument/config/IPlugInstrument-mac.xcconfig -target "All" -UseModernBuildSystem=NO -configuration Debug
 
 View the built plugin files at:
 
-    ./build/examples/CMake/AudioPlugin/AudioPluginExample_artefacts/Debug/VST3
+    ./iplugsdk/Examples/IPlugInstrument/build-mac
 
 Build the final plugin binaries using:
 
-    cmake \
-      -G "Xcode" \
-      -DCMAKE_BUILD_TYPE=Release \
-      -DJUCE_BUILD_EXAMPLES=ON \
-      -DJUCE_BUILD_EXTRAS=OFF \
-      -S ./jucesdk \
-      -B ./build
-    cmake --build ./build --config Release --target AudioPluginExample_All
-
+    xcodebuild -project ./iplugsdk/Examples/IPlugInstrument/projects/IPlugInstrument-macOS.xcodeproj -xcconfig ./iplugsdk/Examples/IPlugInstrument/config/IPlugInstrument-mac.xcconfig -target "All" -UseModernBuildSystem=NO -configuration Release
 
 Copy any additional files:
 
-    cp -v ./src/assets/* ./build/examples/CMake/AudioPlugin/AudioPluginExample_artefacts/Release/VST3
+    cp -v ./src/assets/* ./iplugsdk/Examples/IPlugInstrument/build-mac
 
 For metadata generation as json use the studiorack-cli:
 
@@ -108,8 +100,8 @@ This will run an automated build and release process on GitHub Actions:
 
 ## Resources & guides
 
-* [JUCE framework source code and examples](https://github.com/juce-framework/JUCE)
-* [Official JUCE guide to creating VST audio plugins](https://juce.com/learn/tutorials)
+* [iPlug framework source code and examples](https://github.com/iPlug2/iPlug2)
+* [Official iPlug guide to creating VST audio plugins](https://github.com/iPlug2/iPlug2/wiki)
 
 
 ## Contact
