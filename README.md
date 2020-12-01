@@ -44,9 +44,7 @@ Ensure you also update the preview image and audio files:
 
 ## Testing your plugin
 
-Open the project:
-
-    open ./iplugsdk/Examples/IPlugInstrument/IPlugInstrument.xcworkspace
+Todo
 
 
 ## Build (manual)
@@ -59,19 +57,29 @@ Depending on the the operating system you are on/building for, swap the generato
 
 Compile a development version of the plugin using:
 
-    xcodebuild -project ./iplugsdk/Examples/IPlugInstrument/projects/IPlugInstrument-macOS.xcodeproj -xcconfig ./iplugsdk/Examples/IPlugInstrument/config/IPlugInstrument-mac.xcconfig -target "All" -UseModernBuildSystem=NO -configuration Debug
+    cmake \
+      -G "Xcode" \
+      -DCMAKE_BUILD_TYPE=Debug \
+      -S ./iplugsdk/Examples/IPlugInstrument \
+      -B ./iplugsdk/Examples/IPlugInstrument/build
+    cmake --build ./Examples/IPlugInstrument/build --config Debug --target VST3
 
 View the built plugin files at:
 
-    ./iplugsdk/Examples/IPlugInstrument/build-mac
+    ./iplugsdk/Examples/IPlugInstrument/build
 
 Build the final plugin binaries using:
 
-    xcodebuild -project ./iplugsdk/Examples/IPlugInstrument/projects/IPlugInstrument-macOS.xcodeproj -xcconfig ./iplugsdk/Examples/IPlugInstrument/config/IPlugInstrument-mac.xcconfig -target "All" -UseModernBuildSystem=NO -configuration Release
+    cmake \
+      -G "Xcode" \
+      -DCMAKE_BUILD_TYPE=Release \
+      -S ./iplugsdk/Examples/IPlugInstrument \
+      -B ./iplugsdk/Examples/IPlugInstrument/build
+    cmake --build ./Examples/IPlugInstrument/build --config Release --target VST3
 
 Copy any additional files:
 
-    cp -v ./src/assets/* ./iplugsdk/Examples/IPlugInstrument/build-mac
+    cp -v ./src/assets/* ./iplugsdk/Examples/IPlugInstrument/build
 
 For metadata generation as json use the studiorack-cli:
 
