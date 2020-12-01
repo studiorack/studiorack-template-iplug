@@ -61,8 +61,8 @@ Compile a development version of the plugin using:
       -G "Xcode" \
       -DCMAKE_BUILD_TYPE=Debug \
       -S ./iplugsdk/Examples/IPlugInstrument \
-      -B ./iplugsdk/Examples/IPlugInstrument/build
-    cmake --build ./iplugsdk/Examples/IPlugInstrument/build --config Debug --target VST3
+      -B ./build
+    cmake --build ./build --config Debug --target VST3
 
 View the built plugin files at:
 
@@ -74,8 +74,8 @@ Build the final plugin binaries using:
       -G "Xcode" \
       -DCMAKE_BUILD_TYPE=Release \
       -S ./iplugsdk/Examples/IPlugInstrument \
-      -B ./iplugsdk/Examples/IPlugInstrument/build
-    cmake --build ./iplugsdk/Examples/IPlugInstrument/build --config Release --target VST3
+      -B ./build
+    cmake --build ./build --config Release --target VST3
 
 Copy any additional files:
 
