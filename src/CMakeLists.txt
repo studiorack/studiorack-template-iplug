@@ -45,7 +45,7 @@ iplug2_target_add(_base INTERFACE
 #   target_compile_options(_base INTERFACE "$<$<COMPILE_LANGUAGE:CXX>:-std=c++14>")
 # endif()
 target_compile_features(_base INTERFACE cxx_std_14)
-set_target_properties(_base PROPERTIES CXX_EXTENSIONS OFF)
+# set_target_properties(_base PROPERTIES CXX_EXTENSIONS OFF)
 
 add_executable(App WIN32 MACOSX_BUNDLE ${SRC_FILES} ${RES_FILES})
 iplug2_target_add(App PUBLIC LINK _base RESOURCE ${RES_FILES})
