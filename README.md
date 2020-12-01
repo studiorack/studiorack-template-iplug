@@ -75,11 +75,12 @@ Build the final plugin binaries using:
       -DCMAKE_BUILD_TYPE=Release \
       -S ./iplugsdk/Examples/IPlugInstrument \
       -B ./build
-    cmake --build ./build --config Release --target VST3
+    cmake --build ./build --config Release --target VST3 
 
 Copy any additional files:
 
-    cp -v ./src/assets/* ./iplugsdk/Examples/IPlugInstrument/build
+    cp -v ./src/assets/* ./build/Release
+    echo -n "BNDL????" > ./build/Release/IPlugInstrument.vst3/Contents/PkgInfo
 
 For metadata generation as json use the studiorack-cli:
 
@@ -87,11 +88,11 @@ For metadata generation as json use the studiorack-cli:
 
 Validate your plugin:
 
-    studiorack validate "./build/examples/**/*.{vst,vst3}"
+    studiorack validate "./build/Release/**/*.{vst,vst3}"
 
 Convert and enrich validator report metadata into json:
 
-    studiorack validate "./build/examples/**/*.{vst,vst3}" --json
+    studiorack validate "./build/Release/**/*.{vst,vst3}" --json
 
 
 ## Build (automatic)
