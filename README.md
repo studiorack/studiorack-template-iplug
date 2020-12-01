@@ -28,6 +28,7 @@ Install iPlug dependencies:
 
     cd ./iplugsdk/Dependencies/IPlug &&  ./download-iplug-sdks.sh && cd ../../..
     cd ./iplugsdk/Dependencies &&  ./download-prebuilt-libs.sh && cd ../..
+    cp -v ./src/CMakeLists.txt ./iplugsdk/Examples/IPlugInstrument
 
 
 ## Usage
@@ -75,7 +76,7 @@ Build the final plugin binaries using:
       -DCMAKE_BUILD_TYPE=Release \
       -S ./iplugsdk/Examples/IPlugInstrument \
       -B ./build
-    cmake --build ./build --config Release --target VST3 
+    cmake --build ./build --config Release --target VST3
 
 Copy any additional files:
 

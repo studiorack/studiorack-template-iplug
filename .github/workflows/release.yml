@@ -69,6 +69,7 @@ jobs:
           git submodule update --init --recursive
           cd ./iplugsdk/Dependencies/IPlug &&  ./download-iplug-sdks.sh && cd ../../..
           cd ./iplugsdk/Dependencies &&  ./download-prebuilt-libs.sh && cd ../..
+          cp -v ./src/CMakeLists.txt ./iplugsdk/Examples/IPlugInstrument
 
       - name: Build
         shell: bash
