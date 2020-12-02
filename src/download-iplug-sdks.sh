@@ -8,7 +8,7 @@ git clone https://github.com/iplug2/api.git WAM_SDK
 
 git clone https://github.com/steinbergmedia/vst3sdk.git VST3_SDK
 cd VST3_SDK
-git reset --hard 61bf6376ee9751373d207831e1c42d9d6066aa0f
+git reset --hard ef0a70df2f82a3c218abaca0dbfbb66ae6c61025
 git submodule update --init pluginterfaces
 git submodule update --init base
 git submodule update --init public.sdk
