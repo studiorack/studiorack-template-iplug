@@ -36,7 +36,7 @@ jobs:
           - os: ubuntu-latest
             name: linux
             generator: Unix Makefiles
-            path: ./build/Release
+            path: ./build
           - os: macos-latest
             name: mac
             generator: Xcode
