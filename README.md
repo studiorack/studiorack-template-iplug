@@ -27,6 +27,7 @@ Ensure all git submodules are initialized:
 Install iPlug dependencies:
 
     cp -v ./src/CMakeLists.txt ./iplugsdk/Examples/IPlugInstrument
+    cp -v ./src/main.rc ./iplugsdk/Examples/IPlugInstrument/resources
     cp -v ./src/download-iplug-sdks.sh ./iplugsdk/Dependencies/IPlug
     cd ./iplugsdk/Dependencies/IPlug &&  ./download-iplug-sdks.sh && cd ../../..
     cd ./iplugsdk/Dependencies &&  ./download-prebuilt-libs.sh && cd ../..
