@@ -29,6 +29,7 @@ Install iPlug dependencies:
     cp -v ./src/CMakeLists.txt ./iplugsdk/Examples/IPlugInstrument
     cp -v ./src/main.rc ./iplugsdk/Examples/IPlugInstrument/resources
     cp -v ./src/download-iplug-sdks.sh ./iplugsdk/Dependencies/IPlug
+    cp -v ./iplugsdk/Examples/IPlugInstrument/resources/fonts/Roboto-Regular.ttf ./iplugsdk/Examples/IPlugInstrument/resources
     cd ./iplugsdk/Dependencies/IPlug &&  ./download-iplug-sdks.sh && cd ../../..
     cd ./iplugsdk/Dependencies &&  ./download-prebuilt-libs.sh && cd ../..
 
