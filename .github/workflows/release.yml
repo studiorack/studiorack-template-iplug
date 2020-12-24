@@ -95,7 +95,7 @@ jobs:
         shell: bash
         run: |
           npm install @studiorack/cli -g
-          mv "./build/Release/IPlugInstrument.vst3" "./build/Release/ipluginstrument.vst3"
+          mv "${{ matrix.path }}/IPlugInstrument.vst3" "${{ matrix.path }}/ipluginstrument.vst3"
           cp -v ./src/assets/* "${{ matrix.path }}"
           studiorack validate "${{ matrix.path }}/**/*.{vst,vst3}" --files --json --txt --zip --summary
 
