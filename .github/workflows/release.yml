@@ -86,6 +86,11 @@ jobs:
             -B ./build
           cmake --build ./build --config Release --target VST3
 
+      - name: Install node
+        uses: actions/setup-node@v1
+        with:
+          node-version: '14'
+
       - name: Metadata
         shell: bash
         run: |
