@@ -80,10 +80,14 @@ Build the final plugin binaries using:
       -B ./build
     cmake --build ./build --config Release --target VST3
 
+Rename file if it contains invalid characters/spaces:
+
+    mv "./build/Release/IPlugInstrument.vst3" "./build/Release/ipluginstrument.vst3"
+
 Copy any additional files:
 
     cp -v ./src/assets/* ./build/Release
-    echo -n "BNDL????" > ./build/Release/IPlugInstrument.vst3/Contents/PkgInfo
+    echo -n "BNDL????" > ./build/Release/ipluginstrument.vst3/Contents/PkgInfo
 
 For metadata generation as json use the studiorack-cli:
 
