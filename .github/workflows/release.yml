@@ -34,14 +34,17 @@ jobs:
         os: [ubuntu-latest, macos-latest, windows-latest]
         include:
           - os: ubuntu-latest
+            arch: x86-64
             name: linux
             generator: Unix Makefiles
             path: ./build
           - os: macos-latest
+            arch: x86-64
             name: mac
             generator: Xcode
             path: ./build/Release
           - os: windows-latest
+            arch: x86-64
             name: win
             generator: Visual Studio 16 2019
             path: ./build
@@ -70,7 +73,7 @@ jobs:
         shell: bash
         run: |
           git submodule update --init --recursive
-          cp -v ./src/CMakeLists.txt ./iplugsdk/Examples/IPlugInstrument
+          cp -v -r ./src/Examples/* ./iplugsdk/Examples
           cp -v ./src/download-iplug-sdks.sh ./iplugsdk/Dependencies/IPlug
           cp -v ./iplugsdk/Examples/IPlugInstrument/resources/fonts/Roboto-Regular.ttf ./iplugsdk/Examples/IPlugInstrument/resources
           cd ./iplugsdk/Dependencies/IPlug &&  ./download-iplug-sdks.sh && cd ../../..
