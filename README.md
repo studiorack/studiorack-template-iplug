@@ -1,5 +1,5 @@
-# studiorack-plugin-iplug
-![Release](https://github.com/studiorack/studiorack-plugin-iplug/workflows/Release/badge.svg)
+# studiorack-template-iplug
+![Release](https://github.com/studiorack/studiorack-template-iplug/workflows/Release/badge.svg)
 
 Audio plugin starter template using iPlug framework to build binaries using:
 
