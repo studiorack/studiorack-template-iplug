@@ -1,4 +1,0 @@
-[submodule "iplugsdk"]
-	path = iplugsdk
-	url = https://github.com/iplug2/iplug2
-	branch = linux
